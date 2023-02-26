@@ -7,6 +7,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { AuthContext } from '../../Context/UserContext';
+import { FaUser } from 'react-icons/fa';
+import { Image } from 'react-bootstrap';
 
 
 
@@ -34,11 +36,14 @@ const Header = () => {
 
                         </Nav>
                         <Nav.Item>
-                            {user?.email ? <span>Hello, {user.email}</span> : null}
+                            {user?.displayName ? <span>Hello, {user.displayName}</span> : null}
                         </Nav.Item>
+                        <Link to={'/profile'} className='ps-1 px-3'>
+                            {user?.photoURL ? <Image src={user.photoURL} style={{ height: '30px' }} roundedCircle></Image> : <FaUser></FaUser>}
+                        </Link>
                         <Nav.Item>
                             {
-                                user?.email ? <Button onClick={signOut} className='mx-2' variant="light">Sign Out</Button>
+                                user?.email ? <Button onClick={signOut} className='' variant="light">Sign Out</Button>
                                     : <Link to={'/signin'} > <Button variant="outline-light">SignIn</Button></Link>
 
                             }

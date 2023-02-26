@@ -6,6 +6,8 @@ import News from '../Pages/News/News';
 import SignUp from '../Pages/Shared/SignUp/SignUp';
 import SignIn from '../Pages/Shared/SignIn/SignIn';
 import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
+import Terms from '../Pages/Others/Terms';
+import Profile from '../Pages/Profile/Profile';
 export const routes = createBrowserRouter([
     {
         path: '/',
@@ -30,6 +32,8 @@ export const routes = createBrowserRouter([
             },
             { path: '/signup', element: <SignUp></SignUp> },
             { path: '/signin', element: <SignIn></SignIn> },
+            { path: '/terms', element: <Terms></Terms> },
+            { path: '/profile', element: <Profile></Profile> }
         ]
     }
 ]);
